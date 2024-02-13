@@ -23,12 +23,14 @@ router.post('/signup',async(req,res)=>{
             message: "Incorrect inputs"
         })
     }
+    
     const {firstName,lastName,email,password}=req.body;
 
     try{
         const existingUser = await User.findOne({ email });
 
-        if (existingUser) {
+        if (existingUser) 
+        {
             return res.status(411).json({
                 message: "User already exists"
             });
@@ -45,7 +47,7 @@ router.post('/signup',async(req,res)=>{
 
         const userId = user._id;
         
-        const token = jwt.sign({ userId }, JWT_SECRET);
+        const token = jwt.sign({ userId }, JWT_SECRET,);
 
             res.status(200).json({
             message: 'User created successfully',
@@ -86,7 +88,9 @@ router.post('/signup',async(req,res)=>{
                         message:"user not exists"
                     })
                 }
+
                 const passwordMatch = await bcrypt.compare(password, user.password);
+
                 if (!passwordMatch) {
                     return res.status(401).json({
                         message: "Invalid Credentials"
@@ -104,6 +108,7 @@ router.post('/signup',async(req,res)=>{
                     token: token
                 })
             }
+
             catch(error){
                 console.log("Error during signin",error)
                 return res.status(500).json({

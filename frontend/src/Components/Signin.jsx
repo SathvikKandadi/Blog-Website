@@ -10,23 +10,7 @@ export default function Signin() {
         <div className=" flex justify-start text-4xl font-bold">Sign In</div>
        
        <div className="grid grid-rows-1 flex justify-center ">
-
-       {/* <div className=" grid grid-cols-3 gap-2 pt-2 ">
-            <div className="  p-2 flex justify-end col-span-1 font-bold">
-              First Name 
-            </div>
-            <div className="col-span-2">
-              <input className="border p-2 rounded border-gray-800  bg-white" placeholder="Enter your first name" type="text" />
-            </div>
-        </div>   */}
-        {/* <div className="grid  grid-cols-3 gap-2 pt-2">
-            <div className=" p-2 flex justify-end col-span-1 font-bold">
-             Last Name 
-            </div>
-            <div className="col-span-2">
-              <input className="border  p-2 rounded border-gray-800 bg-white" placeholder="Enter your last name" type="text" />
-            </div>
-        </div>  */}
+        
         <div className="grid   grid-cols-3 gap-2 pt-2">
             <div className="  p-2 flex justify-end col-span-1 font-bold">
               Email 

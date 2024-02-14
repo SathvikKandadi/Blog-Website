@@ -1,6 +1,18 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import {Link, useNavigate} from 'react-router-dom'
 export default function CreatBlog() {
+    const navigate=useNavigate();
+    const[ token,setToken]=useState("");
+    useEffect(()=>{
+        setToken(localStorage.getItem("token"))
+        
+    if(!token){
+        navigate("/");
+
+
+    }
+
+    } ,[token])
     return (
       <div className=' flex justify-center items-center'>
           <div className='border  rounded-xl  m-8 w-1/4  shadow-2xl grid grid-rows-1 '>

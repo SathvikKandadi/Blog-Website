@@ -12,7 +12,7 @@ export default function Signup() {
    
     async function handleClick(){
 
-      const resp=axios.post("http://localhost:3000/api/v1/user/signup", {
+      const resp= await axios.post("http://localhost:3000/api/v1/user/signup", {
             firstName:firstName,
             lastName:lastName,
             email:email,

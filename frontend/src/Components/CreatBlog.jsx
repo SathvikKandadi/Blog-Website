@@ -2,16 +2,17 @@ import React, { useEffect, useState } from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 export default function CreatBlog() {
     const navigate=useNavigate();
-    const[ token,setToken]=useState("");
+    console.log(localStorage.getItem("token"));
+    const [token, setToken] = useState(localStorage.getItem("token"));
+    //console.log(token);
     useEffect(()=>{
-        setToken(localStorage.getItem("token"))
-        
-    if(!token){
+    if(!token){ 
         navigate("/");
-
+    }
+    else
+    {
 
     }
-
     } ,[token])
     return (
       <div className=' flex justify-center items-center'>
@@ -38,6 +39,9 @@ export default function CreatBlog() {
               <button className='border rounded-2xl p-2 text-white bg-blue-500 w-full' >Save</button>
           </div>
           </div>
+          
       </div>
     )
+
+    
   }
